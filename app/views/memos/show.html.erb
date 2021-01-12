@@ -8,23 +8,27 @@
   <tbody>
     <tr>
       <th><%= Memo.human_attribute_name(:id) %></th>
-      <th><%= @memo.id %></th>
+      <td><%= @memo.id %></td>
     </tr>
     <tr>
       <th><%= Memo.human_attribute_name(:title) %></th>
-      <th><%= @memo.title %></th>
+      <td><%= @memo.title %></td>
     </tr>
     <tr>
       <th><%= Memo.human_attribute_name(:content) %></th>
-      <th><%= @memo.content %></th>
+      <td><%= @memo.content %></td>
+    </tr>
+    <tr>
+      <th><%= Memo.human_attribute_name(:image) %></th>
+      <td><%= image_tag @memo.image.variant(resize:'800x800').processed if @memo.image.attached? %></td>
     </tr>
     <tr>
       <th><%= Memo.human_attribute_name(:created_at) %></th>
-      <th><%= @memo.created_at %></th>
+      <td><%= @memo.created_at %></td>
     </tr>
     <tr>
       <th><%= Memo.human_attribute_name(:updated_at) %></th>
-      <th><%= @memo.updated_at %></th>
+      <td><%= @memo.updated_at %></td>
     </tr>
   </tbody>
 </table>

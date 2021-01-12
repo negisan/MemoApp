@@ -3,4 +3,6 @@ class Memo < ApplicationRecord
   validates :content, presence: true
 
   belongs_to :user
+
+  has_one_attached :image
 end
