@@ -10,6 +10,28 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navnar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">MemoApp</a>
+    </nav>
+    <div class="container">
+      <div class="mt-3">
+        <% if flash.notice.present? %>
+          <div class='alert alert-success'>
+            <%= flash.notice %>
+          </div>
+        <% end %>
+        <% if flash.alert.present? %>
+          <div class='alert alert-danger'>
+            <%= flash.alert %>
+          </div>
+        <% end %>
+      </div>
+
+      <%= yield %>
+    </div>
+
+    <div>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
   </body>
 </html>

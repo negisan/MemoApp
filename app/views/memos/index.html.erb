@@ -1,0 +1,31 @@
+<h1>メモ一覧</h1>
+
+<div class='nav justify-content-end mb-5'>
+  <%= link_to '新規登録', new_memo_path, class: 'btn btn-primary' %>
+</div>
+
+<div class='mb-5'>
+  <table class="table table-hover">
+    <thead class="thead-default">
+      <tr>
+        <th><%= Memo.human_attribute_name(:title) %></th>
+        <th><%= Memo.human_attribute_name(:content) %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @memos.each do |memo| %>
+        <tr>
+          <td><%= memo.title %></td>
+          <td><%= memo.content %></td>
+          <td>
+            <%= link_to '詳細', memo, class: 'btn btn-secondary mr-3' %>
+            <%= link_to '編集', edit_memo_path(memo), class: 'btn btn-primary mr-3' %>
+            <%= link_to '削除', memo, method: :delete,
+                  data: {confirm: "メモ#{memo.title}を削除します。よろしいですか？"}, class: 'btn btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

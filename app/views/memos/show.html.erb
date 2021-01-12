@@ -1,0 +1,36 @@
+<h1>詳細</h1>
+
+<div class="nav justify-content-end mb-3">
+  <%= link_to '一覧', memos_path, class: 'btn btn-secondary' %>
+</div>
+
+<table class="table table-hover">
+  <tbody>
+    <tr>
+      <th><%= Memo.human_attribute_name(:id) %></th>
+      <th><%= @memo.id %></th>
+    </tr>
+    <tr>
+      <th><%= Memo.human_attribute_name(:title) %></th>
+      <th><%= @memo.title %></th>
+    </tr>
+    <tr>
+      <th><%= Memo.human_attribute_name(:content) %></th>
+      <th><%= @memo.content %></th>
+    </tr>
+    <tr>
+      <th><%= Memo.human_attribute_name(:created_at) %></th>
+      <th><%= @memo.created_at %></th>
+    </tr>
+    <tr>
+      <th><%= Memo.human_attribute_name(:updated_at) %></th>
+      <th><%= @memo.updated_at %></th>
+    </tr>
+  </tbody>
+</table>
+<div class="nav justify-content-end mt-3">
+  <%= link_to '編集', edit_memo_path(@memo), class: 'btn btn-primary' %>
+</div>
+
+
+
