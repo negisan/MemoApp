@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :login_required
+  before_action :forbidden_loggedin_user, only: [:new, :create]
 
   def new
   end
@@ -22,6 +23,10 @@ class SessionsController < ApplicationController
   end
 
   private
+    def forbidden_loggedin_user
+      redirect_to memos_path if logged_in?
+    end
+
     def session_params
       params.require(:session).permit(:email, :password)
     end
