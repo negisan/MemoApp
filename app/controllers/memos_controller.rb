@@ -2,7 +2,7 @@ class MemosController < ApplicationController
   before_action :set_memo, only: [:show, :edit, :update, :destroy]
 
   def index
-    @memos = Memo.all
+    @memos = current_user.memos
   end
 
   def show
@@ -13,7 +13,7 @@ class MemosController < ApplicationController
   end
 
   def create
-    @memo = Memo.new(memo_params)
+    @memo = current_user.memos.new(memo_params)
     if @memo.save
       redirect_to memo_path(@memo), notice: "#{@memo.title}を作成しました。"
     else
@@ -39,7 +39,7 @@ class MemosController < ApplicationController
 
   private
     def set_memo
-      @memo = Memo.find(params[:id])
+      @memo = current_user.memos.find(params[:id])
     end
 
     def memo_params
