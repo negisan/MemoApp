@@ -1,5 +1,6 @@
 メモアプリ
 
+
 使用方法
 
 
@@ -13,7 +14,9 @@ bin/rails db:seed
 
 を実行
 
-bundle install する際に　ImageMagickがシステムにインストールされていないとうまくいかないかもしれないです
+
+※bundle install する際に　ImageMagickがシステムにインストールされていないとうまくいかないかもしれないです
+
 
 
 
