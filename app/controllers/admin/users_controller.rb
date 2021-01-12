@@ -6,6 +6,9 @@ class Admin::UsersController < ApplicationController
     @users = User.all
   end
 
+  def show
+  end
+
   def new
     @user = User.new
   end
@@ -20,9 +23,6 @@ class Admin::UsersController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def edit
   end
 
@@ -30,11 +30,17 @@ class Admin::UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to admin_user_url(@user), notice: "ユーザー#{@user.name}を更新しました"
     else
-      render :new
+      render :edit
     end
   end
 
   def destroy
+    if @user == current_user
+      redirect_to admin_user_url, alert: 'このユーザーは削除できません'
+    else
+      @user.destroy
+      redirect_to admin_users_url, notice: "ユーザー#{@user.name}を削除しました"
+    end
   end
 
   private
