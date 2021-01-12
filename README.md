@@ -1,24 +1,24 @@
-# README
+メモアプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+使用方法
 
-Things you may want to cover:
+bundle install
 
-* Ruby version
+yarn install
 
-* System dependencies
+bin/rails db:migrate
 
-* Configuration
+bin/rails db:seed
 
-* Database creation
+を実行
 
-* Database initialization
+※bundle install する際に　ImageMagickがシステムにインストールされていないとうまくいかないかもしれないです
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+管理ユーザーはseedには
 
-* ...
+メールアドレス:admin@email.com
+パスワード:password
+
+で登録してあります
