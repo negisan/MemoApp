@@ -1,0 +1,7 @@
+<h1>ユーザーの編集</h1>
+
+<div class="nav justify-content-end mb-3">
+  <%= link_to 'ユーザー詳細', admin_user_path(@user), class: 'btn btn-secondary' %>
+</div>
+
+<%= render partial: 'form', locals: {user: @user} %>
