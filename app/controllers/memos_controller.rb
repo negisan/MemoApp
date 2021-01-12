@@ -2,7 +2,7 @@ class MemosController < ApplicationController
   before_action :set_memo, only: [:show, :edit, :update, :destroy]
 
   def index
-    @memos = current_user.memos
+    @memos = current_user.memos.page(params[:page]).per(20)
   end
 
   def show

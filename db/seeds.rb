@@ -14,7 +14,7 @@ User.find_or_create_by!(email: 'admin@email.com') do |user|
   user.password_confirmation = 'password'
 end
 
-=begin
+
 (1..50).each do |i|
   User.find_or_create_by!(email: "foo#{i}@email.com") do |user|
     user.name = "user"
@@ -23,7 +23,7 @@ end
     user.password_confirmation = "p"
   end
 end
-=end
+
 
 (1..50).each do |i|
   Memo.create!(
