@@ -33,7 +33,7 @@ class Admin::UsersController < ApplicationController
     end
   end
 
-  def destro
+  def destroy
   end
 
   private
