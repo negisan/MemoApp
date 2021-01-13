@@ -18,6 +18,7 @@ bin/rails db:seed
 管理ユーザーはseedには
 
 メールアドレス:admin@email.com
+
 パスワード:password
 
 で登録してあります
