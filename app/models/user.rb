@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
 
-  has_many :memos
+  has_many :memos, dependent: :destroy
 
   #渡された文字列のハッシュ値を返す
   def User.digest(string)
